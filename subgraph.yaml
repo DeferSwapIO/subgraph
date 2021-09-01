@@ -1,0 +1,33 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: DeferSwap
+    network: mainnet
+    source:
+      address: "0xd9fF4d991FA97F37397C09fBe1cA9f55B3e0E49E"
+      abi: DeferSwap
+      startBlock: 10303684
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - DealEvt
+        - OrderCancelEvt
+        - OrderCreatedEvt
+        - OrderUpdatedEvt
+      abis:
+        - name: DeferSwap
+          file: ./abis/DeferSwap.json
+      eventHandlers:
+        - event: DealEvt(string,string,uint256,uint256,address,address)
+          handler: handleDealEvt
+        - event: OrderCancelEvt(uint256,uint256,uint256,uint8)
+          handler: handleOrderCancelEvt
+        - event: OrderCreatedEvt(uint256,address,string,string,uint256,uint256,uint256,uint256,bool,uint256,uint8)
+          handler: handleOrderCreatedEvt
+        - event: OrderUpdatedEvt(uint256,uint256,uint256,uint8)
+          handler: handleOrderUpdatedEvt
+      file: ./src/mapping.ts

@@ -1,0 +1,24 @@
+type DealRecord @entity {
+  id: ID!
+  pair0: String! # string
+  pair1: String! # string
+  amount0: BigInt! # uint256
+  amount1: BigInt! # uint256
+  seller: Bytes! # address
+  buyer: Bytes! # address
+}
+
+type Order @entity {
+  id: ID!
+  order_no: BigInt! # uint256
+  owner: Bytes! # address
+  pair0: String! # string
+  pair1: String! # string
+  amount0: BigInt! # uint256
+  amount1: BigInt! # uint256
+  amount0_rem: BigInt! # uint256
+  amount1_rem: BigInt! # uint256
+  is_sell: Boolean! # bool
+  price: BigInt! # uint256
+  status: Int! # uint8
+}
