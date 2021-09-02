@@ -6,9 +6,9 @@ dataSources:
     name: DeferSwap
     network: mainnet
     source:
-      address: "0xd9fF4d991FA97F37397C09fBe1cA9f55B3e0E49E"
+      address: "0x7E3CFD1a285A7dF192B51368Bd25123a5823abF6"
       abi: DeferSwap
-      startBlock: 10947913
+      startBlock: 10562852
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
