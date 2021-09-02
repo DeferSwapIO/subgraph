@@ -8,7 +8,7 @@ dataSources:
     source:
       address: "0xd9fF4d991FA97F37397C09fBe1cA9f55B3e0E49E"
       abi: DeferSwap
-      startBlock: 10303684
+      startBlock: 10947913
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4

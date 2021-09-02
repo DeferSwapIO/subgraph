@@ -21,6 +21,7 @@ export function handleDealEvt(event: DealEvtEvent): void {
   entity.amount1 = event.params.amount1
   entity.seller = event.params.seller
   entity.buyer = event.params.buyer
+  entity.created_at = event.block.timestamp;
 
   entity.save()
 }

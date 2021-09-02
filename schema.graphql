@@ -6,6 +6,7 @@ type DealRecord @entity {
   amount1: BigInt! # uint256
   seller: Bytes! # address
   buyer: Bytes! # address
+  created_at: BigInt! # uint256
 }
 
 type Order @entity {
